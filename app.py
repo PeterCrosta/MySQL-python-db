@@ -37,8 +37,8 @@ def hello_there(name = None):
 @app.route("/single-patient/")
 def single_patient():
     data = get_one_patient()
-    print('in app, data is ', data)
-    return render_template("single_patient.html")
+    # print('in app, data is ', data)
+    return render_template("single_patient.html", patient=data)
 
 @app.route("/drugs/")
 def drugs():

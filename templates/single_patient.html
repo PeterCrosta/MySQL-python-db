@@ -3,5 +3,10 @@
 About
 {% endblock %}
 {% block content %}
-<p>About page for the Visual Studio Code Flask tutorial.</p>
+<p>All Patients</p>
+    <ul>
+        {% for row in patient %}
+                <li>{{row}}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}
