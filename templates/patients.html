@@ -3,10 +3,24 @@
 All Patients
 {% endblock %}
 {% block content %}
-<p>All Patients</p>
-    <ul>
-        {% for name in patients %}
-                <li>{{name}}</li>
-        {% endfor %}
-    </ul>
+<h2>All Patients</h2>
+<ul>
+    {% for name in patients %}
+            <li>{{name}}</li>
+    {% endfor %}
+</ul>
+<h2>Add Patient</h2>
+<form action="" method="post" class="form-example">
+    <div class="form-example">
+      <label for="name">First name: </label>
+      <input type="text" name="first_name" id="fist_name" required>
+    </div>
+    <div class="form-example">
+      <label for="email">Last name: </label>
+      <input type="text" name="last_name" id="last_name" required>
+    </div>
+    <button type="button">
+        Add patient
+    </button>
+  </form>
 {% endblock %}

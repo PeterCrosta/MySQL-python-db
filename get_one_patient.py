@@ -2,13 +2,13 @@ from mysql.connector import MySQLConnection, Error
 from python_mysql_dbconfig import read_db_config
 
 
-def get_one_patient():
+def get_one_patient(id):
     try:
         dbconfig = read_db_config()
         conn = MySQLConnection(**dbconfig)
         cursor = conn.cursor()
         # cursor.execute("SELECT * FROM drugs")
-        search_str = "SELECT first_name, last_name, name FROM patients INNER JOIN regimens ON patients.id = regimens.pt_id INNER JOIN drugs ON regimens.drug_id = drugs.id WHERE patients.id = 1"
+        search_str = "SELECT first_name, last_name, name FROM patients INNER JOIN regimens ON patients.id = regimens.pt_id INNER JOIN drugs ON regimens.drug_id = drugs.id WHERE patients.id = " + str(id)
         # print(search_str)
         cursor.execute(search_str)
         rows = cursor.fetchall()
