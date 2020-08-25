@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block title %}
+All Patients
+{% endblock %}
+{% block content %}
+<p>All Patients</p>
+    <ul>
+        {% for name in patients %}
+                <li>{{name}}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
