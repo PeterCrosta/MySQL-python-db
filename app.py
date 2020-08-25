@@ -34,10 +34,10 @@ def hello_there(name = None):
     )
 
 
-@app.route("/single-patient/<pt_id>")
-def single_patient(pt_id):
-    # data = get_one_patient(pt_id)
-    # print('in app, data is ', data)
+@app.route("/single-patient/")
+def single_patient():
+    data = get_one_patient()
+    print('in app, data is ', data)
     return render_template("single_patient.html")
 
 @app.route("/drugs/")
